@@ -1,4 +1,3 @@
- <script>
         // Data Sejarah Islam
         const islamicHistory = [
             {
@@ -381,4 +380,3 @@
             };
             showModal(aboutData);
         }
-    </script>
