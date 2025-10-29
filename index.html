@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globe Islam 3D - Peta Interaktif Sejarah Islam</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen">
+        <div class="loading-content">
+            <h1>🕌 Globe Islam 3D</h1>
+            <p>Peta Interaktif Perkembangan Sejarah Islam Dunia</p>
+            <button class="start-btn" onclick="startExploration()">🧭 Mulai Menjelajah</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header style="display: none;">
+        <h1>🕌 Globe Islam 3D</h1>
+        <div class="nav-buttons">
+            <button onclick="resetView()">🏠 Reset</button>
+            <button onclick="toggleTimeline()">📅 Timeline</button>
+            <button onclick="showAbout()">ℹ️ Info</button>
+        </div>
+    </header>
+
+    <!-- Canvas Container -->
+    <div id="canvasContainer"></div>
+
+    <!-- Timeline -->
+    <div id="timeline" style="display: none;">
+        <div class="timeline-items">
+            <div class="timeline-item" data-century="7" onclick="filterByCentury(7)">Abad 7 M</div>
+            <div class="timeline-item" data-century="8" onclick="filterByCentury(8)">Abad 8 M</div>
+            <div class="timeline-item" data-century="12" onclick="filterByCentury(12)">Abad 12 M</div>
+            <div class="timeline-item" data-century="15" onclick="filterByCentury(15)">Abad 15 M</div>
+            <div class="timeline-item" data-century="16" onclick="filterByCentury(16)">Abad 16 M</div>
+            <div class="timeline-item" data-century="20" onclick="filterByCentury(20)">Abad 20 M</div>
+            <div class="timeline-item active" onclick="showAllMarkers()">Semua Era</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="display: none;">
+        <p class="copyright">© 2021 <strong>Rizky Rinaldi, S.Kom., M.Kom.</strong> | STAI Raudhatul Akmal Deli Serdang</p>
+    </footer>
+
+    <!-- Controls Info -->
+    <div id="controlsInfo" style="display: none;">
+        <h3>Kontrol:</h3>
+        <ul>
+            <li>🖱️ Drag: Putar globe</li>
+            <li>🔍 Scroll: Zoom in/out</li>
+            <li>🎯 Klik marker: Info detail</li>
+        </ul>
+    </div>
+
+    <!-- Info Modal -->
+    <div id="modalOverlay" onclick="closeModal()"></div>
+    <div id="infoModal">
+        <div class="modal-header">
+            <h2 id="modalTitle">Judul Lokasi</h2>
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-content">
+            <div class="modal-year" id="modalYear">Tahun</div>
+            <div class="modal-image" id="modalImage">📍 Lokasi Bersejarah</div>
+            <div class="modal-description" id="modalDescription">Deskripsi akan muncul di sini</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
